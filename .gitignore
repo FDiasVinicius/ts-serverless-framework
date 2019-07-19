@@ -1,0 +1,8 @@
+node_modules
+.webpack
+.build
+docs
+.serverless
+.history
+code-doc
+npm-debug.log

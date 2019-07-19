@@ -1,0 +1,42 @@
+service: ts-serverless-app
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: development
+  region: 'us-east-1'
+  environment:
+    APP_ENV: ${opt:stage, 'development'}
+    AWS_ENDPOINT: ${self:custom.aws-endpoint.${opt:stage, 'development'}, null}
+    AWS_VERSION: "2006-03-01"
+
+functions:
+  helloWorld:
+    handler: handler.helloWorld
+    events:
+      - http:
+          path: /hello/world
+          method: get
+          cors: true
+
+  helloMyFriend:
+    handler: handler.helloFriend
+    events:
+      - http:
+          path: /hello/friend
+          method: post
+          cors: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    host: 0.0.0.0
+  aws-endpoint:
+    development: "http://localstack:4572/"
+    int: "s3.us-east-1.amazonaws.com/"
+    homolog: "s3.us-east-1.amazonaws.com/"
+    staging: "s3.us-east-1.amazonaws.com/"
+    production: "s3.us-east-1.amazonaws.com/"
