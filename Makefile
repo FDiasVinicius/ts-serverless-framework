@@ -8,7 +8,7 @@ up:
 
 .PHONY: install
 install:
-	docker run -v $$PWD:/opt/app/ -w /opt/app/ neemuchaordic/oms-scorer-wrapper:node-8-jessie npm install
+	docker run -v $$PWD:/opt/app/ -w /opt/app/ node-8-jessie npm install
 
 .PHONY: stop
 stop:
