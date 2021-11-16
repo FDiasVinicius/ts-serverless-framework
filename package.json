@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@types/node": "^10.12.18",
-    "aws-sdk": "2.381.*",
+    "aws-sdk": "2.814.*",
     "bunyan": "^1.8.12",
     "deep-equal": "^1.0.1",
     "global": "^4.3.2",
