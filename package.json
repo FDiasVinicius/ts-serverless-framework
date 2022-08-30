@@ -22,7 +22,7 @@
     "global": "^4.3.2",
     "json-schema-ref-parser": "^6.0.2",
     "moment": "^2.13.0",
-    "moment-timezone": "^0.5.4",
+    "moment-timezone": "^0.5.35",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "serverless": "^1.35.1",
